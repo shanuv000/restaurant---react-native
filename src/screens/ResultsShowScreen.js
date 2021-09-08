@@ -23,37 +23,40 @@ const ResultsShowScreen = ({ navigation }) => {
     return null;
   }
   return (
-    <View style={styles.container}>
+    <>
+      <Text style={styles.text}>{result.name}</Text>
       <ScrollView>
-        <Text style={styles.text}>{result.name}</Text>
         <FlatList
           data={result.photos}
+          showsVerticalScrollIndicator={false}
           keyExtractor={(r) => r}
           renderItem={({ item }) => {
             return <Image style={styles.image} source={{ uri: item }} />;
           }}
         />
       </ScrollView>
-    </View>
+    </>
   );
 };
 const styles = StyleSheet.create({
-  container: { margin: 10 },
+  container: { marginHorizontal: 15 },
   text: {
-    padding: 10,
+    marginVertical: 10,
+    // backgroundColor: "grey",
     fontSize: 22,
     fontWeight: "700",
     alignSelf: "center",
+    marginHorizontal: 15,
   },
   image: {
     height: 200,
-    paddingHorizontal: 5,
-    width: "100%",
-    marginTop: 10,
+    // width: "100%",
+    marginVertical: 7,
     borderTopLeftRadius: 50,
     borderTopRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 50,
+    marginHorizontal: 15,
     shadowColor: "black",
   },
 });
