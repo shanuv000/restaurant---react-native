@@ -25,7 +25,7 @@ const ResultsShowScreen = ({ navigation }) => {
   return (
     <>
       <Text style={styles.text}>{result.name}</Text>
-      <ScrollView>
+      <View>
         <FlatList
           data={result.photos}
           showsVerticalScrollIndicator={false}
@@ -34,7 +34,7 @@ const ResultsShowScreen = ({ navigation }) => {
             return <Image style={styles.image} source={{ uri: item }} />;
           }}
         />
-      </ScrollView>
+      </View>
     </>
   );
 };
